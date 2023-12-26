@@ -1,11 +1,6 @@
 import axios from "axios";
 import { createAsyncThunk, } from '@reduxjs/toolkit';
-// import { fetchingData, isError, isPending, deleteContact, addContact } from "./slice";
-// here is asynchrone actions /thunk + api
-// mock api endpoint:
-// https://6585af9d022766bcb8c927c2.mockapi.io/contacts
 
-// defaults for all axios in project => global
 axios.defaults.baseURL = 'https://6585af9d022766bcb8c927c2.mockapi.io';
 
 // request on back for asynchrone actions
