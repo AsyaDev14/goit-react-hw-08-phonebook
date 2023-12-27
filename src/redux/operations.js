@@ -2,6 +2,8 @@ import axios from "axios";
 import { createAsyncThunk, } from '@reduxjs/toolkit';
 
 axios.defaults.baseURL = 'https://6585af9d022766bcb8c927c2.mockapi.io';
+// change to back to swagger api
+// axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 // request on back for asynchrone actions
 export const fetchContactsThunk = createAsyncThunk(
