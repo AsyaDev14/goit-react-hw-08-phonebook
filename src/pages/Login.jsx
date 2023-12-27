@@ -1,0 +1,47 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
+import { loginThunk } from '../redux/auth/authOperations';
+import { useNavigate } from 'react-router-dom';
+
+export const Login = () => {
+  const navigate = useNavigate()
+  const { register, handleSubmit } = useForm({
+    defaultValues: {
+      email: 'test@example565.com',
+      password: 'example565'
+    }
+  });
+  const dispatch = useDispatch()
+  const submit = data => {
+    console.log('data', data);
+    dispatch(loginThunk(data)).unwrap()
+      .then(() => {
+        navigate('/contacts')
+      }).catch((err) => {
+        alert('error')
+      })
+  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit(submit)}>
+        <label>
+          <span>Email</span>
+          <input
+            {...register('email')}
+            type="text"
+            placeholder='Enter the email' />
+        </label>
+
+        <label>
+          <span>Password</span>
+          <input
+            {...register('password')}
+            type="password"
+            placeholder='Enter the password' />
+        </label>
+        <button type='submit'>Login</button>
+      </form>
+    </div>
+  )
+}
