@@ -6,18 +6,16 @@ import { ContactList } from './contactList/ContactList';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectLoading, selectError } from '../redux/selectors';
 import { fetchContactsThunk } from '../redux/operations';
-
 const Contacts = () => {
   const dispatch = useDispatch()
   const loading = useSelector(selectLoading);
   const error = useSelector(selectError);
-    useEffect(() => {
+  useEffect(() => {
     dispatch(fetchContactsThunk())
   }, [dispatch])
   if (error) {
     return (<div>{error}</div>)
   }
-
   return (
     <>
       <Section title='Phonebook'>

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { loginThunk, registerThunk, logoutThunk } from "./authOperations"
+import { loginThunk, registerThunk, logoutThunk, refreshThunk } from "./authOperations"
 
 // import axios from "axios";
 const initialState = {
@@ -24,6 +24,11 @@ const slice = createSlice({
         state.user = initialState.user;
         state.isLoggedIn = false;
         state.token = '';
+      })
+      .addCase(refreshThunk.fulfilled, (state, { payload }) => {
+        state.user.name = payload.name;
+        state.user.email = payload.email;
+        state.isLoggedIn = true;
       })
       .addCase(registerThunk.fulfilled, (state, { payload }) => {
         state.user = payload.user;
