@@ -23,8 +23,8 @@ export const Login = () => {
       })
   }
   return (
-    <div>
-      <form onSubmit={handleSubmit(submit)}>
+    <div className='login-box'>
+      <form onSubmit={handleSubmit(submit)} className='login-form'>
         <label>
           <span>Email</span>
           <input
@@ -40,7 +40,7 @@ export const Login = () => {
             type="password"
             placeholder='Enter the password' />
         </label>
-        <button type='submit'>Login</button>
+        <button type='submit' className='login-button'>Login</button>
       </form>
     </div>
   )

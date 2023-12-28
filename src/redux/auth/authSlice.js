@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { loginThunk, registerThunk, logoutThunk} from "./authOperations"
+import { loginThunk, registerThunk, logoutThunk } from "./authOperations"
 
 // import axios from "axios";
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
     name: ''
   },
   token: '',
-  isLoggedIn: false
+  isLoggedIn: false,
 }
 
 const slice = createSlice({
