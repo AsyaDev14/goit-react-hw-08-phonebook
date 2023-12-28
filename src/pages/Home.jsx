@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Home = () => {
   return (
     <div className='welcome-container'>
-      <div className='background-image'></div>
+
       <div className='content'>
         <h1 className='welcome-heading'>
           Welcome to the Contact Book!
