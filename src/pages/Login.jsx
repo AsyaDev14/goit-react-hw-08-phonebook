@@ -6,12 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const navigate = useNavigate()
-  const { register, handleSubmit } = useForm({
-    defaultValues: {
-      email: 'test@example565.com',
-      password: 'example565'
-    }
-  });
+  const { register, handleSubmit } = useForm();
   const dispatch = useDispatch()
   const submit = data => {
     console.log('data', data);
