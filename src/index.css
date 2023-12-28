@@ -43,6 +43,7 @@ code {
 .navlinks:hover {
   color: cadetblue;
 }
+
 /* form login */
 /* Assuming you have a CSS file, e.g., Login.css */
 
@@ -86,9 +87,11 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
- .login-button:hover {
+
+.login-button:hover {
   background-color: rgb(52, 95, 97);
- }
+}
+
 /* user menu */
 
 .user-menu {
@@ -104,7 +107,7 @@ input {
 
 /* sign in  */
 
-.register{
+.register {
   max-width: 400px;
   margin: auto;
   padding: 20px;
@@ -113,7 +116,56 @@ input {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background-color: #fff;
 }
+
 .register-form {
   display: flex;
   flex-direction: column;
+}
+
+.loader {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: rgb(201, 228, 248);
+}
+
+/* Home.css */
+
+/* Home.css */
+
+.welcome-container {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../src/images/Oldphone.webp');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.welcome-heading {
+  font-size: 2em;
+}
+
+.welcome-text {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+.register-home{
+  color: #fff;
 }

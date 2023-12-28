@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Register } from '../pages/Register';
 import { Navbar } from '../pages/Navbar';
@@ -10,7 +10,8 @@ import { NotFound } from '../pages/NotFound';
 import { refreshThunk } from '../redux/auth/authOperations';
 import { PrivateRoute } from 'routes/PrivateRoutes';
 import { PublicRoute } from 'routes/PublickRoutes';
-
+import { selectisRefresh } from '../redux/auth/authSelectors';
+import { Loader } from '../pages/Loader';
 const App = () => {
   const dispatch = useDispatch()
 
@@ -18,8 +19,13 @@ const App = () => {
     dispatch(refreshThunk())
   }, [dispatch])
 
+const isRefresh = useSelector(selectisRefresh);
 
-  return (
+  return isRefresh
+    ?
+    (<Loader />)
+    :
+    (
     <>
       <Navbar />
       <Routes>

@@ -13,6 +13,7 @@ export const Register = () => {
     dispatch(registerThunk(data))
   }
   return (
+      
     <div className='register'>
       <form onSubmit={handleSubmit(submit)} className='register-form'>
         <label>
