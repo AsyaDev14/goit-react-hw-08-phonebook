@@ -4,6 +4,7 @@
 }
 
 .contact_item {
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;

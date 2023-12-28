@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { ContactForm } from './contactForm/ContactForm'
-import { Section } from './section/Section';
-import { Filter } from './filter/Filter';
-import { ContactList } from './contactList/ContactList';
+import { ContactForm } from '../components/contactForm/ContactForm'
+import { Section } from '../components/section/Section';
+import { Filter } from '../components/filter/Filter';
+import { ContactList } from '../components/contactList/ContactList';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectLoading, selectError } from '../redux/selectors';
-import { fetchContactsThunk } from '../redux/operations';
+import { selectLoading, selectError } from '../redux/reduxContacts/selectors';
+import { fetchContactsThunk } from '../redux/reduxContacts/operations';
 const Contacts = () => {
   const dispatch = useDispatch()
   const loading = useSelector(selectLoading);

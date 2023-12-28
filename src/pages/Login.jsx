@@ -2,17 +2,17 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from '../redux/auth/authOperations';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const { register, handleSubmit } = useForm();
   const dispatch = useDispatch()
   const submit = data => {
     console.log('data', data);
     dispatch(loginThunk(data)).unwrap()
       .then(() => {
-        navigate('/contacts')
+        // navigate('/contacts')
       }).catch((err) => {
         alert('error')
       })
